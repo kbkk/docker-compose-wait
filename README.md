@@ -45,6 +45,8 @@ optional arguments:
                         compose.yml files, example: 5s, 10m,... ). If there is
                         a timeout this command will exit returning 1.
                         (default: wait for an infinite amount of time)
+  -l, --log-print       Whether to print docker healthcheck output for
+                        unhealthy services
 ```
 
 Basically it can be as simple as:
@@ -57,6 +59,15 @@ docker-compose-wait
 
 ```
 docker-compose-wait -f <path_to_yaml_file> -f <path_to_other_yaml_file> ...
+```
+
+## Running tests
+
+```
+python -m pip install -r requirements.txt # install dependencies
+brew install bats-core # install test runner
+
+bats tests.bats # run tests
 ```
 
 ## License
